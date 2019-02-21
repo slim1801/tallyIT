@@ -31,7 +31,7 @@ function diffDays(date1, date2) {
 
 function diffHours(date1, date2) {
   const timeDiff = date2.getTime() - date1.getTime();
-  return timeDiff / (3600 * 24);
+  return timeDiff / (1000 * 3600);
 }
 
 function getTotalDay(date) {

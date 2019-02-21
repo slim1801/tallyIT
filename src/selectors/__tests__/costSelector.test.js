@@ -156,5 +156,59 @@ describe("Cost Selector", () => {
       });
       expect(result).toBe(40);
     });
+    test("park for under one hour should cost $5", () => {
+      const result = costSelector({
+        form: {
+          entryDateTime: "0001-01-01T07:00",
+          exitDateTime: "0001-01-01T07:30"
+        }
+      });
+      expect(result).toBe(5);
+    });
+    test("park for exactly one hour should cost $5", () => {
+      const result = costSelector({
+        form: {
+          entryDateTime: "0001-01-01T07:00",
+          exitDateTime: "0001-01-01T08:00"
+        }
+      });
+      expect(result).toBe(10);
+    });
+    test("park for under two hour should cost $10", () => {
+      const result = costSelector({
+        form: {
+          entryDateTime: "0001-01-01T07:00",
+          exitDateTime: "0001-01-01T08:30"
+        }
+      });
+      expect(result).toBe(10);
+    });
+    test("park for exactly two hour should cost $10", () => {
+      const result = costSelector({
+        form: {
+          entryDateTime: "0001-01-01T07:00",
+          exitDateTime: "0001-01-01T09:00"
+        }
+      });
+      expect(result).toBe(15);
+    });
+    test("park for under three hour should cost $15", () => {
+      const result = costSelector({
+        form: {
+          entryDateTime: "0001-01-01T07:00",
+          exitDateTime: "0001-01-01T09:30"
+        }
+      });
+      expect(result).toBe(15);
+    });
+    test("park for exactly three hour should cost $15", () => {
+      const result = costSelector({
+        form: {
+          entryDateTime: "0001-01-01T07:00",
+          exitDateTime: "0001-01-01T09:30"
+        }
+      });
+      expect(result).toBe(15);
+    });
   });
 });
