@@ -1,0 +1,13 @@
+html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #2980b9;
+}
+
+* {
+  box-sizing: border-box;
+}
