@@ -21,7 +21,7 @@ const AppContainer = styled.div`
 
 const FormContainer = styled.div`
   width: 450px;
-  background-color: #2ecc71;
+  background-color: #1dd1a1;
   display: flex;
   flex-flow: column;
   padding: 20px 0px;
